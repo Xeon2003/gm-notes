@@ -11,7 +11,7 @@ class GMNote extends FormApplication {
     }
 
     get showExtraButtons() {
-        return (game.dnd5e && this.entity.constructor.name !== 'RollTable');
+        return (this.entity.constructor.name !== 'RollTable'); //game.dnd5e && 
     }
 
     static get defaultOptions() {
