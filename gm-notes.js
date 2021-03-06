@@ -40,7 +40,7 @@ class GMNote extends FormApplication {
 
     activateListeners(html) {
         super.activateListeners(html);
-
+        console.log(html)
         html.find('.moveToNote').click(ev => this._moveToNotes());
         html.find('.moveToDescription').click(ev => this._moveToDescription());
     }
