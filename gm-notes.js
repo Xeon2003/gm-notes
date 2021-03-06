@@ -11,7 +11,7 @@ class GMNote extends FormApplication {
     }
 
     get showExtraButtons() {
-        return (this.entity.constructor.name !== 'RollTable'); //game.dnd5e && 
+        return (this.entity.constructor.name === 'JournalEntry');
     }
 
     static get defaultOptions() {
@@ -82,49 +82,33 @@ class GMNote extends FormApplication {
     }
     
     async _moveToNotes() {
-        if (game.dnd5e) {
-            let descPath = '';
-            switch (this.entity.constructor.name) {
-                case 'Actor5e': descPath = 'data.details.biography.value'; break;
-                case 'Item5e': descPath = 'data.description.value'; break;
-                case 'JournalEntry': descPath = 'content'; break;
-            }
-            let description = getProperty(this.entity, 'data.'+descPath);
-            let notes = getProperty(this.entity, 'data.flags.gm-notes.notes');
+        let description = getProperty(this.entity, 'data.content');
+        let notes = getProperty(this.entity, 'data.flags.gm-notes.notes');
 
-            if (notes === undefined) notes = '';
-            if (description === undefined) description = '';
+        if (notes === undefined) notes = '';
+        if (description === undefined) description = '';
 
-            let obj = {};
-            obj[descPath] = '';
-            obj['flags.gm-notes.notes'] = notes + description;
+        let obj = {};
+        obj['content'] = '';
+        obj['flags.gm-notes.notes'] = notes + description;
 
-            await this.entity.update(obj);
-            this.render();
-        }
+        await this.entity.update(obj);
+        this.render();
     }
 
     async _moveToDescription() {
-        if (game.dnd5e) {
-            let descPath = '';
-            switch (this.entity.constructor.name) {
-                case 'Actor5e': descPath = 'data.details.biography.value'; break;
-                case 'Item5e': descPath = 'data.description.value'; break;
-                case 'JournalEntry': descPath = 'content'; break;
-            }
-            let description = getProperty(this.entity, 'data.' + descPath);
-            let notes = getProperty(this.entity, 'data.flags.gm-notes.notes');
+        let description = getProperty(this.entity, 'data.content');
+        let notes = getProperty(this.entity, 'data.flags.gm-notes.notes');
 
-            if (notes === undefined) notes = '';
-            if (description === undefined) description = '';
+        if (notes === undefined) notes = '';
+        if (description === undefined) description = '';
 
-            let obj = {};
-            obj[descPath] = description + notes;
-            obj['flags.gm-notes.notes'] = '';
+        let obj = {};
+        obj['content'] = description + notes;
+        obj['flags.gm-notes.notes'] = '';
 
-            await this.entity.update(obj);
-            this.render();
-        }
+        await this.entity.update(obj);
+        this.render();
     }
 }
 Hooks.on('init', () => {
