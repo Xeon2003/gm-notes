@@ -6,9 +6,9 @@
 	"author": "Felix#6196",
 	"scripts": ["./gm-notes.js"],
 	"styles": ["./gm-notes.css"],
-    "url": "https://github.com/syl3r86/gm-notes",
-    "manifest": "https://raw.githubusercontent.com/syl3r86/gm-notes/master/module.json",
-    "download": "https://github.com/syl3r86/gm-notes/archive/master.zip",
+    "url": "https://github.com/Xeon2003/gm-notes",
+    "manifest": "https://raw.githubusercontent.com/Xeon2003/gm-notes/master/module.json",
+    "download": "https://github.com/Xeon2003/gm-notes/archive/master.zip",
     "languages": [
 	{
           "lang": "de",
