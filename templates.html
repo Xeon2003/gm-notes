@@ -2,8 +2,13 @@
     {{#if isGM}}    
         {{#if showExtraButtons}}
             <div class="controlls">
-                <button class="moveToNote">{{localize "GMNote.moveToNote"}}</button>
-                <button class="moveToDescription">{{localize "GMNote.moveToDescription"}}</button>
+                
+                <button class="moveToNote" title="{{localize "GMNote.moveToNote"}}">
+                    <i class="fas fa-file-import"</i>
+                </button>
+                <button class="moveToDescription" title="{{localize "GMNote.moveToDescription"}}">
+                    <i class="fas fa-file-export"</i>
+                </button>
             </div>
         {{/if}}
         {{editor content=flags.gm-notes.notes target="flags.gm-notes.notes" button=true owner=owner editable=true}}
