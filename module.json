@@ -2,13 +2,13 @@
 	"name": "gm-notes",
 	"title": "GM Notes",
 	"description": "Adds the option to create Notes JournalEntrys only accessible to GMs",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"author": "Felix#6196 / XeoN2003",
 	"scripts": ["./gm-notes.js"],
 	"styles": ["./gm-notes.css"],
     "url": "https://github.com/Xeon2003/gm-notes",
     "manifest": "https://raw.githubusercontent.com/Xeon2003/gm-notes/master/module.json",
-    "download": "https://github.com/Xeon2003/gm-notes/archive/v032.zip",
+    "download": "https://github.com/Xeon2003/gm-notes/archive/v033.zip",
     "languages": [
 	{
           "lang": "de",
